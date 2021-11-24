@@ -1,5 +1,6 @@
 import React from 'react'
 import { AppContainer } from './components/AppContainer'
+import { Filters } from './components/Filters'
 
 class App extends React.Component {
 	state = {
@@ -36,39 +37,20 @@ class App extends React.Component {
 
 	render () {
 		return (
-			<AppContainer>
-            <FiltersContainer>
-					<input placeholder='Busca'
-					       value={this.state.query} 
-						   onChange={this.updateQuery}
-					/>
-					
-					<input type="number"
-					       placeholder="Preço mínimo"
-					       value={this.state.minPrice} 
-						   onChange={this.updateMinprice}
-					/>
-
-					<input type="number"
-					       placeholder="Preço máximo"
-					       value={this.state.maxPrice} 
-						   onChange={this.updateMaxprice}
-					/>
-					<span>
-						<label for="sort"></label>
-						<select name="sort"
-						        value={this.state.sortingParameter} 
-						        onChange={this.updateSortingParameter}
-						>
-							<option value="title">Título do trabalho oferecido. Espera receber uma string.</option>
-							<option value="description">Detalhamento acerca do serviço. Espera receber uma string.</option>
-							<option value="price">Valor cobrado pelo serviço. Espera receber um number.</option>
-							<option value="paymentMethods">Espera receber um array de strings com os meios de pagamento aceitos.</option>
-							<option value="dueDate">Espera receber a data até quando o serviço ficará disponível no formato internacional: AAAA/MM/DD</option>							
-						</select>
-					</span>
 			
-			</FiltersContainer>
+			<AppContainer>
+            <Header/>
+			<Filters
+			query={this.state.query}
+			updateQuery={this.updateQuery}
+			updateMinprice={this.updateMinprice}
+			updateMinprice={this.updateMinprice}
+			updateSortingParameter={this.updateSortingParameter}
+			minPrice={this.state.minPrice}
+			maxPrice={this.state.maxPrice}
+			sortingParameter={this.state.sortingParameter}
+			
+			/>
 				<ListContainer>
 					{this.state.servicos
 					.filter(job => {
