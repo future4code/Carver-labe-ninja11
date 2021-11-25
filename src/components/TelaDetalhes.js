@@ -15,8 +15,7 @@ export default class TelaDetalhes extends React.Component {
         <p>R${this.props.detalhes.price},00</p>
         <p>{this.props.detalhes.paymentMethods}</p>
 
-        {/* <button onClick={this.BuscarJobs}>buscar</button> */}
-        {/* {meusJobs} */}
+        
         <hr/>
       </div>
     )
