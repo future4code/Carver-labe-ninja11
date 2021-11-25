@@ -1,6 +1,8 @@
 import React from 'react'
 import { AppContainer } from './components/AppContainer'
 import { Filters } from './components/Filters'
+import { theme } from './components/theme'
+import { ThemeProvider } from '@material-ui/core'
 
 class App extends React.Component {
 	state = {
@@ -37,7 +39,7 @@ class App extends React.Component {
 
 	render () {
 		return (
-			
+			<ThemeProvider>
 			<AppContainer>
             <Header/>
 			<Filters
@@ -82,7 +84,7 @@ class App extends React.Component {
 
 
 			</AppContainer>
-			
+			</ThemeProvider>
 		)	
 	}
 	
