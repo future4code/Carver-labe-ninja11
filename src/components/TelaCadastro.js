@@ -1,5 +1,9 @@
 import React from "react";
 import Axios from "axios";
+import { RodapeSite } from './TelaCards'
+import { TopoSite } from './TelaCards'
+import { ContainerPrincipal } from '../App'
+
 
 export default class TelaCadastro extends React.Component {
 
@@ -54,8 +58,14 @@ export default class TelaCadastro extends React.Component {
 
   render() {
     return (
-      <div>
-        <button onClick={() => this.props.EscolheTelaInicial()}>home</button>
+      <ContainerPrincipal>
+
+      <TopoSite>
+			<h2>Header</h2>
+      <button onClick={() => this.props.EscolheTelaInicial()}>home</button>
+			</TopoSite>
+
+        
         <h2>Tela de Cadastro:</h2>
         <input value={this.state.inputTitulo} onChange={this.onChangeTitulo} placeholder={"Título"}/>
         <input value={this.state.inputDescricao} onChange={this.onChangeDescricao} placeholder={"Descrição"}/>
@@ -64,8 +74,11 @@ export default class TelaCadastro extends React.Component {
         <input type="date" value={this.state.inputData} onChange={this.onChangeData} placeholder={"Data"}/>
         <button onClick={this.CreateJob}>botao</button>
 
-        <hr />
-      </div>
+        <RodapeSite>
+				<h2>Footer</h2>
+			  </RodapeSite>
+        
+      </ContainerPrincipal>
     );
   }
 }

@@ -1,9 +1,20 @@
 import React from 'react'
-import TelaInicial from './components/TelaInicial'
+
+import TelaInicial  from './components/TelaInicial'
 import TelaCadastro from './components/TelaCadastro'
 import TelaCards from './components/TelaCards'
-import TelaDetalhes from './components/TelaDetalhes'
-import Axios from 'axios'
+import styled from 'styled-components'
+
+export const ContainerPrincipal = styled.div`
+	display: flex;
+	flex-direction: column;
+	border: 1px solid red;
+	height: 100vh;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+`
+
 
 export default class App extends React.Component {
 
@@ -97,12 +108,18 @@ export default class App extends React.Component {
 			// })
 	}
 
-	render() {
-		return (
-			<div>
-				{this.MudarDeTela()}
-			</div>
-		)
+
+	  urlRequisicao = `https://labeninjas.herokuapp.com`
+	
+	render(){
+	return (
+		<ContainerPrincipal>
+
+    		{this.MudarDeTela()}
+
+		</ContainerPrincipal>
+	)
+
 	}
 }
 
