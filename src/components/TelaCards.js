@@ -1,5 +1,26 @@
 import Axios from 'axios'
 import React from 'react'
+import styled from 'styled-components'
+import { ContainerPrincipal } from '../App'
+
+
+export const TopoSite = styled.div`
+	display: flex;
+	border: 1px solid blue;
+	height: 15vh;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+`
+
+export const RodapeSite = styled.div`
+	display: flex;
+	border: 1px solid blue;
+	height: 15vh;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+`
 
 export default class TelaCards extends React.Component {
   state = {
@@ -30,13 +51,25 @@ export default class TelaCards extends React.Component {
       )
     })
     return (
-      <div>
-          <button onClick={()=> this.props.EscolheTelaInicial()}>home</button>
+
+      <ContainerPrincipal>
+        
+			<TopoSite>
+			<h2>Header</h2>
+      <button onClick={()=> this.props.EscolheTelaInicial()}>home</button>
+			</TopoSite>
+
+         
         <h2>Tela de Cards:</h2>
         <button onClick={this.BuscarJobs}>buscar</button>
+        
         {meusJobs}
-        <hr/>
-      </div>
+
+        <RodapeSite>
+				<h2>Footer</h2>
+			  </RodapeSite>
+
+      </ContainerPrincipal>
     )
   }
 }
