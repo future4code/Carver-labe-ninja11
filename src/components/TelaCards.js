@@ -24,7 +24,11 @@ export const RodapeSite = styled.div`
 
 export default class TelaCards extends React.Component {
   state = {
-    banininha: []
+    banininha: [],
+  }
+
+  componentDidMount(){
+    this.BuscarJobs()
   }
 
     BuscarJobs = () =>{
@@ -42,12 +46,21 @@ export default class TelaCards extends React.Component {
         })
     }
 
+    url = this.props.urlRequisicao
+
+    funcaoAux = (id) =>{
+      this.props.EscolheTelaDetalhes()
+      this.props.JobPorId(id)
+    }
 
   render() {
 
     const meusJobs = this.state.banininha.map((item) => {
       return (
+              <div>
               <p>{item.title}</p>
+              <button onClick={()=>this.funcaoAux(item.id)}>Detalhes</button>
+              </div>
       )
     })
     return (
@@ -61,8 +74,10 @@ export default class TelaCards extends React.Component {
 
          
         <h2>Tela de Cards:</h2>
+
         <button onClick={this.BuscarJobs}>buscar</button>
         
+
         {meusJobs}
 
         <RodapeSite>

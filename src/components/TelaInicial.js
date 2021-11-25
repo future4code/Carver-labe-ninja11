@@ -8,6 +8,7 @@ export default class TelaInicial extends React.Component {
 
   render() {
     return (
+
       <ContainerPrincipal>
 
       <TopoSite>
@@ -23,6 +24,7 @@ export default class TelaInicial extends React.Component {
 			  </RodapeSite>
 
       </ContainerPrincipal>
+
     )
   }
 }
