@@ -1,18 +1,18 @@
 import { createTheme } from '@material-ui/core/styles';
 
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: '#ff4400',
+      main: '#311b92',
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
     },
     secondary: {
-      light: '#0066ff',
-      main: '#0044ff',
+      light: '##5a48a7',
+      main: '##5a48a7',
       // dark: will be calculated from palette.secondary.main,
-      contrastText: '#ffcc00',
+      contrastText: '#5a48a7',
     },
     // Used by `getContrastText()` to maximize the contrast between
     // the background and the text.
@@ -24,4 +24,3 @@ const theme = createTheme({
   },
 });
 
-export default theme

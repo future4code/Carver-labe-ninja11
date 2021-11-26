@@ -1,9 +1,11 @@
+import { ThemeProvider } from '@material-ui/core'
 import React from 'react'
 import styled from "styled-components"
 
 export function Filters(props){
     const FiltersContainer = styled.div
-    return <FiltersContainer>
+    return <ThemeProvider theme={theme}>
+		<FiltersContainer>
 					<input placeholder='Busca'
 					       value={this.props.query} 
 						   onChange={props.updateQuery}
@@ -34,4 +36,5 @@ export function Filters(props){
 						</select>
 					</span> 
             </FiltersContainer>
+			</ThemeProvider>
 }

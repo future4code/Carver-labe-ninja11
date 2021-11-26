@@ -12,7 +12,7 @@ import { ThemeProvider } from '@material-ui/core';
 
 export default function BasicList() {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
     <Box sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
       <nav aria-label="main mailbox folders">
         <List>

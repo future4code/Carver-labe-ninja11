@@ -6,7 +6,7 @@ import { BasicList } from './components/SearchList/index'
 export class SearchPage extends React.Component {
     render() {
       return (
-        <ThemeProvider>
+        <ThemeProvider theme={theme}>
         <div>
           {BasicList}
         </div>

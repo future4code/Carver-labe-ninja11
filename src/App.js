@@ -39,7 +39,7 @@ class App extends React.Component {
 
 	render () {
 		return (
-			<ThemeProvider>
+			<ThemeProvider theme={theme}>
 			<AppContainer>
             <Header/>
 			<Filters
@@ -80,11 +80,9 @@ class App extends React.Component {
 						return <Card key={job.id} job={job}/>
 					})}
 				</ListContainer>
-
-
-
+				
 			</AppContainer>
-			</ThemeProvider>
+			</ThemeProvider >
 		)	
 	}
 	
