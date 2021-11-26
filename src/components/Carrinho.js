@@ -1,19 +1,26 @@
 import React from "react";
-import { RodapeSite } from './TelaCards'
-import { TopoSite } from './TelaCards'
 import { ContainerPrincipal } from '../App'
 
 
 export default class Carrinho extends React.Component{
     
-     
+    valorTotal = () => {
+        let total = 0
+
+        for (let servicos of this.props.carrinhoCompras){
+            total = (total + (servicos.price))
+        }
+        console.log(total)
+        return total
+    }
+    
    
     render(){
         const carrinho = this.props.carrinhoCompras.map((item)=>{
             	return (
             	  <div>
-            		<p>{item.title}</p>
-            		<p>{item.price}</p>
+            		<p>{item.title} - {item.price}</p>
+            		<button onClick={()=>this.props.macacoGuariba(item.id)}>X</button>   
             	  </div> 
             	)
               })
@@ -21,18 +28,11 @@ export default class Carrinho extends React.Component{
 
         return (
             <ContainerPrincipal>
-
-                <TopoSite>
-		    	    <h2>Header</h2>
-                    <button onClick={()=> this.props.EscolheTelaInicial()}>home</button>
-                    <button onClick={()=> this.props.EscolheTelaCarrinho()}>Carrinho</button>
-		    	</TopoSite>
+            <h2>Carrinho:</h2>
 
             {carrinho}
 
-                <RodapeSite>
-                    <h2>Footer</h2>
-                </RodapeSite>
+            <p>Valor Total: R${this.valorTotal()}</p>
 
             </ContainerPrincipal>
         )
@@ -41,27 +41,3 @@ export default class Carrinho extends React.Component{
     
     
 }
-
-
-
-// adicionarCarrinho =(id)=>{
-//   const produto = listaDeProdutos.filter((produto)=>{
-//         return produto.id === id
-//       })
-//       console.log(produto)
-
-//   const novoCarrinho = [...this.state.carrinho, produto[0]]
-
-//   this.setState({
-//     carrinho: novoCarrinho
-//   })
-// }
-
-
-
-// {this.state.carrinho.map((produto)=>{
-//     return <div>
-//     <p>{produto.nome},preço: {produto.preco}</p>
-    
-//     </div>
-//   })}
