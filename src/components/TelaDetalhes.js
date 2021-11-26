@@ -1,4 +1,4 @@
-import Axios from 'axios'
+// import Axios from 'axios'
 import React from 'react'
 
 export default class TelaDetalhes extends React.Component {
